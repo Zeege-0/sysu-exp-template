@@ -31,6 +31,16 @@
 \usepackage{xeCJK}
 \usepackage{subfigure}
 \usepackage{subfiles}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage[newfloat]{minted}
+\usepackage{caption}
+\usepackage[bottom]{footmisc}
+\usepackage{wrapfig}
+
+% minted code
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=代码}
 
 % 取消超链接框框
 \hypersetup{hidelinks} 
@@ -57,6 +67,15 @@
 \renewcommand{\baselinestretch}{1.5}
 \newcommand{\ie}{\textit{i.e.}}
 
+
+\newenvironment{myitemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+
 % define used colors
 \definecolor{GRay}{RGB}{200, 200, 200}
 
@@ -64,7 +83,7 @@
 \date{}
 
 % set experiment report title, used in next.
-\newcommand{\rtitle}{模板模板}
+\newcommand{\rtitle} {模板模板}
 \newcommand{\lecturename}{ABCD}
 \newcommand{\instructorname}{EFGI}
 \newcommand{\sgrade}{1234}
