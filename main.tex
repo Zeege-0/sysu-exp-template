@@ -37,6 +37,7 @@
 \usepackage{caption}
 \usepackage[bottom]{footmisc}
 \usepackage{wrapfig}
+\usepackage{tablefootnote}
 
 % minted code
 \newenvironment{code}{\captionsetup{type=listing}}{}
@@ -44,6 +45,25 @@
 
 % 取消超链接框框
 \hypersetup{hidelinks} 
+
+% 取消标题前后空行
+\captionsetup[figure]{aboveskip=0em, belowskip=-1em}
+\captionsetup[table]{aboveskip=0em}
+
+% 取消浮动环境空行
+% \addtolength{\textfloatsep}{0em}
+% \addtolength{\intextsep}{0em}
+% \addtolength{\floatsep}{0em}
+
+% 取消公式前后空行
+\makeatletter
+\g@addto@macro\normalsize{
+  \setlength\abovedisplayskip{0.2em}
+  \setlength\belowdisplayskip{0.2em}
+  \setlength\abovedisplayshortskip{0.2em}
+  \setlength\belowdisplayshortskip{0.2em}
+}
+\makeatother
 
 % 设置算法
 \floatname{algorithm}{算法}
@@ -67,13 +87,17 @@
 \renewcommand{\baselinestretch}{1.5}
 \newcommand{\ie}{\textit{i.e.}}
 
-
+% 紧凑itmize
 \newenvironment{myitemize}{
+\vspace*{-0.5em}
 \begin{itemize}
   \setlength{\itemsep}{1pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
 }{\end{itemize}}
+
+% 页边距
+% \geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
 
 
 % define used colors
